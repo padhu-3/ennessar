@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { FaBars, FaTimes } from "react-icons/fa"
+//import { ReactDOM } from 'react';
 import Logo from '../Assets/images/Logo 1.png';
 import image from '../Assets/images/image.png';
 import Asset5 from '../Assets/images/Asset 5.png';
@@ -17,6 +19,7 @@ import primary from '../Assets/images/Asset 18.png';
 import tank from '../Assets/images/Asset 19.png';
 import secondary from '../Assets/images/Asset 20.png';
 import oil from '../Assets/images/Asset 21.png';
+import tick from '../Assets/images/tick.png';
 import reactor from '../Assets/images/Asset 22.png';
 import htds from '../Assets/images/Asset 23.png';
 import asset25 from '../Assets/images/Asset 25.png';
@@ -25,6 +28,7 @@ import asset27 from '../Assets/images/Asset 27.png';
 import asset28 from '../Assets/images/Asset 28.png';
 import asset29 from '../Assets/images/Asset 29.png';
 import Arkiton from '../Assets/images/Arkiton.jpg';
+import final from '../Assets/images/final.svg';
 import SliverBells from '../Assets/images/Sliver Bells.png';
 import Sindhura from '../Assets/images/Sindhura.png';
 import WhitePetals from '../Assets/images/White Petals.png';
@@ -52,42 +56,56 @@ function Home() {
         const value = e.target.value;
         setData({ ...data, [FirstName]: value })
     }
-    function ValidateEmail(input) {
-
-        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-        if (input.value.match(validRegex)) {
-
-            alert("Valid email address!");
-
-            document.form1.text1.focus();
-
-            return true;
-
-        } else {
-
-            alert("Invalid email address!");
-
-            document.form1.text1.focus();
-
+    function validate() {
+        var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        var name = document.getElementById('name').value;
+        if (!regName.test(name)) {
+            alert('Please enter your first name');
+            document.getElementById('name').focus();
             return false;
-
+        } else {
+            alert('Valid name given.');
+            return true;
         }
-        var phone_input = document.getElementById("myform_phone");
-
-        phone_input.addEventListener('input', () => {
-            phone_input.setCustomValidity('');
-            phone_input.checkValidity();
-        });
-
-        phone_input.addEventListener('invalid', () => {
-            if (phone_input.value === '') {
-                phone_input.setCustomValidity('Enter phone number!');
-            } else {
-                phone_input.setCustomValidity('Enter phone number is invalid');
-            }
-        });
     }
+    function validate() {
+        var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        var name = document.getElementById('name').value;
+        if (!regName.test(name)) {
+            alert('Please enter your last name');
+            document.getElementById('name').focus();
+            return false;
+        } else {
+            alert('Valid name given.');
+            return true;
+        }
+    }
+    function phonenumber(inputtxt) {
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (inputtxt.value.match(phoneno)) {
+            return true;
+        }
+        else {
+            alert("message");
+            return false;
+        }
+    }
+    function validate() {
+        var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        var name = document.getElementById('name').value;
+        if (!regName.test(name)) {
+            alert('Please enter your full name (first & last name).');
+            document.getElementById('name').focus();
+            return false;
+        } else {
+            alert('Valid name given.');
+            return true;
+        }
+    }
+    <script>
+        let popup= 
+    </script>
+
     const slides = [
         {/*{ image: { unnamed }, title: "Blue Meadows", description: "1,60,000 sft., Varthur, Bangalore",clickEvent:sliderClick },
         { image: { Adoni }, title: "Adoni Court Building", description: "1,60,000 sft., Varthur, Bangalore",clickEvent:sliderClick },
@@ -99,37 +117,52 @@ function Home() {
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2 },
         { width: 768, itemsToShow: 3 },
-        { width: 1200, itemsToShow: 4 },
+        { width: 1200, itemsToShow: 3 },
     ];
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup")
+        }
     return (
         <>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+            </script>
             <section className="universal-ennessar">
+
                 <div className='navelements'>
                     <ul>
                         <div className="nav-img">
-                            <img className='image' src={Logo} alt='' />
+                            <img className='image' width="10%" height="50px" src={final} alt='' />
                         </div>
-                        <div className="nav-links">
-                            <li>
-                                <a href='#Home'>Home</a>
-                            </li>
-                            <li>
-                                <a href='#Manage'>About</a>
-                            </li>
-                            <li>
-                                <a href='#current'>Projects</a>
-                            </li>
-                            <li>
-                                <a href='#Services'>Services</a>
-                            </li>
-                            <li>
-                                <a href='#Contact-Us'>Contact us</a>
-                            </li>
-                        </div>
+                        <nav class='navbar'>
+                            <span class='bar'></span>
+                            <span class='bar'></span>
+                            <span class='bar'></span>
+                            <div className="nav-links">
+                                <ul id='menu'>
+                                    <li>
+                                        <a href='#Home' class='nav-menu'>Home</a>
+                                    </li>
+                                    <li>
+                                        <a href='#Manage' class='nav-menu'>About</a>
+                                    </li>
+                                    <li>
+                                        <a href='#current' class='nav-menu'>Projects</a>
+                                    </li>
+                                    <li>
+                                        <a href='#Services' class='nav-menu'>Services</a>
+                                    </li>
+                                    <li>
+                                        <a href='#Contact-Us' class='nav-menu'>Contact us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </ul>
-                    <button class="burger-menu" id="burger-menu">
-        <ion-icon class="bars" name="menu-outline"></ion-icon>
-      </button>
                 </div>
                 {/* <div className='container'>
                     <img src={image} alt='error loading in image' />
@@ -164,8 +197,6 @@ function Home() {
                     </div>
                     <div className='photo'>
                         <img src={Logo} alt='error loading in image' />
-                        <div id='current'>
-                        </div>
                     </div>
                 </div>
                 {/*<div id='current'>
@@ -185,107 +216,115 @@ function Home() {
                         </div>
                     </div>
             </div>*/}
-            <section className='Cur'>
-                <div className='Project-heading'>
-                    <h1>OUR CURRENT PROJECTS</h1>
-                </div>
-                <div className="App">
-                    <Carousel breakPoints={breakPoints}>
-                        <Item className='Wrap'><div className='Cur'>
-                            <img src={unnamed} alt='' className='card-img'/>
-                            <p><b>Blue Meadows</b></p>
-                            <p>1,60,000 sft., Varthur, Bangalore.</p></div></Item>
-                        <Item className='Wrap'>
-                            <div className='Curen'>
-                                <img src={Adoni} alt='' className='card-img' />
-                                <p><b>Adoni Court Building</b></p>
-                                <p>70,000 sft., Kurnool, Andhra Pradesh.</p>
-                            </div></Item>
-                        <Item className='Wrap'>
-                            <div className='Curen'>
-                                <img src={Himmli} alt='' className='card-img' />
-                                <p><b>Himmlische</b></p>
-                                <p>50,000 sft., ITPL, Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item className='Wrap'>
-                            <div className='Curen'>
-                                <img src={Nandanam} alt='' className='card-img' />
-                                <p><b>Mukunda Nandanam</b></p>
-                                <p>2,70,000 sft., White Field, Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item className='Wrap'>
-                            <div className='Curen'>
-                                <img src={residence} alt='' className='card-img' />
-                                <p><b>Private Residence</b></p>
-                                <p>25,000 sft., Kurnool, AP.</p>
-                            </div>
-                        </Item>
-                    </Carousel>
-                </div>
-                <div className='completed-heading'>
-                    <h1>OUR COMPLETED PROJECTS</h1>
-                </div>
-                <div className="App">
-                    <Carousel breakPoints={breakPoints}>
-                        <Item><div className='Cur'>
-                            <img src={SliverBells} alt='' className='card-img' />
-                            <p><b>Sliver Bells</b></p>
-                            <p>90,000 sft.,89 units Varthur, Bangalore.</p></div></Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Trillium} alt='' className='card-img' />
-                                <p><b>The Trillium</b></p>
-                                <p>76,000 sft.,64 units, Balagera,Bangalore.</p>
-                            </div></Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Greenwoods} alt='' className='card-img' />
-                                <p><b>Green Woods</b></p>
-                                <p>75,000 sft.,64 units, White Field,Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Palash} alt='' className='card-img' />
-                                <p><b>The Palash</b></p>
-                                <p>50,000 sft., Varthur, Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={WhitePetals} alt='' className='card-img' />
-                                <p><b>White Petals</b></p>
-                                <p>45,000 sft.,40 units,Varthur, Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Bommarillu} alt='' className='card-img' />
-                                <p><b>Bommarillu</b></p>
-                                <p>45,000 sft.,40 units,Varthur, Bangalore.</p>
-                            </div>
-                        </Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Sindhura} alt='' className='card-img' />
-                                <p><b>Sindhura Residency</b></p>
-                                <p>25,000 sft.,20 units,Manikonda, Hyderabad.</p>
-                            </div>
-                        </Item>
-                        <Item>
-                            <div className='Curen'>
-                                <img src={Srinivasam} alt='' className='card-img' />
-                                <p><b>Srinivasam</b></p>
-                                <p>15,000 sft.,10 units,Manikonda, Hyderabad.</p>
-                            </div>
-                        </Item>
-                    </Carousel>
-                </div>
+                <div id='current'></div>
+                <section className='Cur'>
+                    <div className='Project-heading'>
+                        <h1>OUR CURRENT PROJECTS</h1>
+                    </div>
+                    <section className='blue'>
+                        <div className="App">
+                            <Carousel breakPoints={breakPoints}>
+                                <Item className='Wrap'><div className='Curen'>
+                                    <img src={unnamed} alt='' className='card-img' />
+                                    <div className='EE'>
+                                        <p className='Flats'>Blue Meadows</p>
+                                        <p>1,60,000 sft., Varthur, Bangalore.</p></div>
+                                </div></Item>
+                                <Item className='Wrap'>
+                                    <div className='Curen'>
+                                        <img src={Adoni} alt='' className='card-img' />
+                                        <p className='Flats'>Adoni Court Building</p>
+                                        <p>70,000 sft., Kurnool, Andhra Pradesh.</p>
+                                    </div></Item>
+                                <Item className='Wrap'>
+                                    <div className='Curen'>
+                                        <img src={Himmli} alt='' className='card-img' />
+                                        <p className='Flats'>Himmlische</p>
+                                        <p>50,000 sft., ITPL, Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Wrap'>
+                                    <div className='Curen'>
+                                        <img src={Nandanam} alt='' className='card-img' />
+                                        <p className='Flats'>Mukunda Nandanam</p>
+                                        <p>2,70,000 sft., White Field, Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Wrap'>
+                                    <div className='Curen'>
+                                        <img src={residence} alt='' className='card-img' />
+                                        <p className='Flats'>Private Residence</p>
+                                        <p>25,000 sft., Kurnool, AP.</p>
+                                    </div>
+                                </Item>
+                            </Carousel>
+                        </div>
+                        <div className='completed-heading'>
+                            <h1>OUR COMPLETED PROJECTS</h1>
+                        </div>
+                        <div className="App">
+                            <Carousel breakPoints={breakPoints}>
+                                <Item className='Snap'><div className='Curen'>
+                                    <img src={SliverBells} alt='' className='card-img' />
+                                    <p className='Flats'>Sliver Bells</p>
+                                    <p>90,000 sft.,89 units<br></br>Varthur, Bangalore.</p></div></Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Trillium} alt='' className='card-img' />
+                                        <p className='Flats'>The Trillium</p>
+                                        <p>76,000 sft.,64 units,<br></br> Balagera,Bangalore.</p>
+                                    </div></Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Greenwoods} alt='' className='card-img' />
+                                        <p className='Flats'>Green Woods</p>
+                                        <p>75,000 sft.,64 units,<br></br> White Field,Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Palash} alt='' className='card-img' />
+                                        <p className='Flats'>The Palash</p>
+                                        <p>50,000 sft<br></br> Varthur, Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={WhitePetals} alt='' className='card-img' />
+                                        <p className='Flats'>White Petals</p>
+                                        <p>45,000 sft.,40 units,<br></br>Varthur, Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Bommarillu} alt='' className='card-img' />
+                                        <p className='Flats'>Bommarillu</p>
+                                        <p>45,000 sft.,40 units,<br></br>Varthur, Bangalore.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Sindhura} alt='' className='card-img' />
+                                        <p className='Flats'>Sindhura Residency</p>
+                                        <p>25,000 sft.,20 units,<br></br>Manikonda, Hyderabad.</p>
+                                    </div>
+                                </Item>
+                                <Item className='Snap'>
+                                    <div className='Curen'>
+                                        <img src={Srinivasam} alt='' className='card-img' />
+                                        <div className='flats'>
+                                            <p className='Flats'>Srinivasam</p>
+                                            <div id='Services'></div>
+                                            <p>15,000 sft.,10 units,Manikonda, Hyderabad.</p>
+                                        </div>
+                                    </div>
+                                </Item>
+                            </Carousel>
+                        </div>
+                    </section>
                 </section>
 
-               {/* <section className='completed-works'>
+                {/* <section className='completed-works'>
                     <div className='completed-heading'>
                         <h1>OUR COMPLETED PROJECTS</h1>
                     </div>
@@ -393,57 +432,57 @@ function Home() {
                         <div className="col">
                             <div className="row">
                                 <img src={condensat} alt="" />
-                                <p>MVRE condensat tank 250KL</p>
+                                <p className='civ'>MVRE condensat tank 250KL</p>
                             </div>
                             <div className="row">
                                 <img src={Sludge} alt="" />
-                                <p>INS Back wash & Sludge tanks capacity - 34KL</p>
+                                <p className='civ'>INS Back wash & Sludge tanks capacity - 34KL</p>
                             </div>
                             <div className="row">
                                 <img src={tanks} alt="" />
-                                <p>INS sludge tanks capacity - 33 KL</p>
+                                <p className='civ'>INS sludge tanks capacity - 33 KL</p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="row">
                                 <img src={Mvre} alt="" />
-                                <p>MVRE feed tank capacity 250KL</p>
+                                <p className='civ'>MVRE feed tank capacity 250KL</p>
                             </div>
                             <div className="row">
                                 <img src={Bio} alt="" />
-                                <p>Bio reactors 2 tank capacity 188 KL</p>
+                                <p className='civ'>Bio reactors 2 tank capacity 188 KL</p>
                             </div>
                             <div className="row">
                                 <img src={RO} alt="" />
-                                <p>RO product tank 350 KL</p>
+                                <p className='civ'>RO product tank 350 KL</p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="row">
                                 <img src={primary} alt="" />
-                                <p>Primary clarifiers 2 tank 200KL</p>
+                                <p className='civ'>Primary clarifiers 2 tank 200KL</p>
                             </div>
                             <div className="row">
                                 <img src={tank} alt="" />
-                                <p>Sludge tank capacity - 40.5 KL</p>
+                                <p className='civ'>Sludge tank capacity - 40.5 KL</p>
                             </div>
                             <div className="row">
                                 <img src={secondary} alt="" />
-                                <p>Secondary clarifiers capacity - 63 KL</p>
+                                <p className='civ'>Secondary clarifiers capacity - 63 KL</p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="row">
                                 <img src={oil} alt="" />
-                                <p>Oil and grease tank 1700 KL</p>
+                                <p className='civ'>Oil and grease tank 1700 KL</p>
                             </div>
                             <div className="row">
                                 <img src={reactor} alt="" />
-                                <p>Bio reactors 2 tank capacity - 188 KL</p>
+                                <p className='civ'>Bio reactors 2 tank capacity - 188 KL</p>
                             </div>
                             <div className="row">
                                 <img src={htds} alt="" />
-                                <p>HTDS holding tank capacity - 1800 KL</p>
+                                <p className='civ'>HTDS holding tank capacity - 1800 KL</p>
                             </div>
                         </div>
                     </div>
@@ -466,7 +505,7 @@ function Home() {
                 </div>
                 <div className='inspect'>
                     <div className='inspectphoto'>
-                        <img src={asset27} alt='' />
+                        <img width="649" height="432" src={asset27} alt='' />
                     </div>
                     <div className='structure'>
                         <h1>STRUCTURAL INSPECTION<p>Ennessaar’s Structural Inspection team is made up of experienced engineers and professionals who conduct site investigations, compliance inspections and provide construction advice.</p></h1>
@@ -475,8 +514,9 @@ function Home() {
                 <div className='Mep'>
                     <div className='str'>
                         <h1>MEP Projects<p>Ennessaar conducts field investigations and testing, on-site laboratory testing of soil material and other exploratory work for residential, commercial, land  development and industrial developments. Our materials testing laboratory allows us to provide a punctual and reliable service whilst delivering accurate results at all times.</p></h1>
-                    <div id='Contact-Us'></div>
+                        <div id='Contact-Us'></div>
                     </div>
+                    id='Contact-Us'
                     <div className='set'>
                         <img src={asset28} alt='' />
                     </div>
@@ -484,12 +524,32 @@ function Home() {
                 <section className='Touch'>
                     <form method="post">
                         <h1>Get In Touch With Us</h1>
-                        <input type='text' name='FirstName' id='' onChange={handleChange} value={data.FirstName} placeholder='FirstName' />
-                        <input type='text' name='LastName' id='' onChange={handleChange} value={data.LastName} placeholder='LastName' />
-                        <input type='email' name='email' id='' onChange={handleChange} value={data.email} placeholder='example@gmail.com' onclick="ValidateEmail(document.form1.text1)" required />
-                        <input type="tel" id="myform_phone" placeholder='+91' name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" format= '123-456-7890' required />
-                        <textarea name='enquiry' id='' cols="30" onChange={handleChange} value={data.enquiry} rows="10" placeholder='enter here...'></textarea>
-                        <button type='submit'>SUBMIT</button>
+                        <label className='Name'>Name
+                            <span className='star'>*</span>
+                        </label>
+                        <input type='text' className='first' id='FirstName' name="myForm" onclick="Name()" value="" placeholder='FirstName' />
+                        <span className='last' border-radius="30px">
+                            <input type='text' name='LastName' id='name' name="myForm" value="" placeholder='LastName' onclick="Name()" />
+                        </span>
+                        <div className='Mal'>
+                            <label className='Mail'>Email
+                                <span className='star'>*</span>
+                            </label>
+                            <input type='email' name='email' id='' onChange={handleChange} value={data.email} placeholder='example@gmail.com' onclick="ValidateEmail(document.form1.text1)" required label="Email*" />
+                        </div>
+                        <label className='Num'>Number
+                            <span className='star'>*</span>
+                        </label>
+                        <input type="tel" id="myform_phone" placeholder='+91' name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" format='123-456-7890' required />
+                        <label className='En'>Enquiry</label>
+                        <textarea name='enquiry' id='' cols="10" onChange={handleChange} value={data.enquiry} rows="7" placeholder='enter here...'></textarea>
+                        <button type='submit' class='btn' onclick="openPopup()">SUBMIT</button>
+                        <div class='popup' id='popup'>
+                            <img src={tick} />
+                            <h2>Thank you!</h2>
+                            <p>We will contact you soon.</p>
+                            <button type='button' onclick="closePopup()">OK</button>
+                        </div>
                     </form>
                     <div className='frame'>
                         <img src={asset29} alt='' />
@@ -512,7 +572,7 @@ function Home() {
                 </div>
                 <div className='footer'>
                     <div className='Us'>
-                        <h1>About us</h1>
+                        <h1 className='about'>About Us</h1>
                         <p>We are committed to providing the most personalized real estate services from listing to close. We have exceptional
                             results which are confirmed by the number of clients we serve.</p>
                     </div>
@@ -529,5 +589,6 @@ function Home() {
         </>
     )
 }
+
 
 export default Home;

@@ -25,18 +25,9 @@ body {
     position: fixed !important;
     overflow: hidden;
     width: 100%;
+    height: 15vh;
     top: 0;
 }
-:root{
-    --variable-name:value;
-}
-.burger-menu{
-    display: block;
-}
-.navelements ul.show{
-    transform: translateX(0);
-}
-
 .navelements ul {
     padding: 0.8vw;
     list-style: none;
@@ -70,7 +61,6 @@ body {
     display: flex;
     padding-right: 2vw;
 }
-
 .nav-img img {
     width: 8vw;
     display: flex;
@@ -91,47 +81,73 @@ body {
 .nav-links li {
     /* border: 1px solid black; */
     width: fit-content;
-    margin: 0vw 2vw;
-    font-size: 1.2vw;
-    font-weight: 500;
+    font-family: 'Karla',sans-serif;
+    margin: 0vw 1vw;
+    font-size: 1vw;
+    margin-top: 10px;
+    font-weight: 550;
 }
 
 .nav-links li:hover {
     text-decoration: underline;
     transition-duration: 0.2s;
 }
-@media screen and (max-width:768px){
-    .navelements{
-        display: block;
-    }
+.nav-img{
+    position: relative;
 }
-@media screen and (max-width:768px){
-    .navelements ul{
-        display: none;
-    }
+.nav-img img{
+    display: block;
 }
-@media screen and (max-width:768px){
-    .navelements ul{
-        position: absolute;
-        top: 60px;
-        left: 0;
-        flex-direction: column;
-        width: 100%;
-        height: calc(100vh -77px);
-        font-size: 40px;
-    }
-    .navelements li{
-        text-align: center;
-        margin: 0;
-    }
-    .navelements li a{
-        color: black;
-        width: 100%;
-        padding: 1.5rem 0;
-    }
-    .navelements li:hover{
-        background-color: #eee;
-    }
+.App{
+    width: 100%;
+    height: 500%!important;
+    max-height: 300% !important;
+    font-family: 'Karla', sans-serif;
+
+}
+.Wrap .Curen p{
+    font-family: 'Rubik',sans-serif;
+    color: #808285;
+    font-weight: 500;
+    font-size: medium;
+}
+.Wrap .Curen .Flats{
+    color: #262627;
+    font-weight: 100;
+    font-size:larger;
+}
+.Snap .Curen p{
+    font-family: 'Rubik',sans-serif;
+    color: #808285;
+    font-weight: 500;
+    font-size: medium;
+}
+.Snap .Curen .Flats{
+    color: #262627;
+    font-weight: 100;
+    font-size:larger; 
+}
+.EE .Flats{
+    font-family: 'Rubik',sans-serif; 
+    font-size: 30px;
+}
+.Wrap img{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 45px;
+    margin-top: 20px;
+    font-family: 'Karla',sans-serif;
+}
+.Snap img{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 45px;
+    margin-top: 20px;
+    font-family: 'Karla',sans-serif;
 }
 .container {
     /* position: relative;  */
@@ -216,7 +232,7 @@ div .Manager {
     justify-content: center;
     background-color: #f3f1f6;
 }
-@media(max-width:767px){
+/*@media(max-width:767px){
 .home-header{
     font-size: 43px;
 }
@@ -225,8 +241,111 @@ div .Manager {
     .home-header{
         font-size: 54px;
     }
+    }*/
+    .Touch h1{
+        text-align: center;
+        font-weight: 1200;
+        margin-top: 0px!important;
     }
+    .Name{
+        font-size: 15px;
+        gap: 0px;
+    }
+    .first{
+        float: left;
+        width: 260px;
+        margin-top: 25px;
+        font-family: 'Karla',sans-serif;
+        color: #565252;
+       /* border-radius: 10px;*/
+    }
+    .last{
+        float: right;
+        margin-top: 10px;
+        font-family: 'Karla',sans-serif;
+        color: #565252;
+         width: 270px;
+         margin-right: 20px;
+         border-radius: 15px!important;
+    }
+    .Name{
+        text-align: left;
+        font-family: 'Karla',sans-serif;
+        color: #565252;
+        margin-left: -250px;
+        font-weight: 600;
+    }
+    .Mal{
+        margin-top: 13%;
 
+    }
+    .Mail{
+        font-size: 15px;
+        font-family: 'Karla',sans-serif;
+        margin-left: 15px;
+        color: #565252;
+        gap: 0em;
+        font-weight: 600;
+    }
+    .Num{
+        font-size: 15px;
+        margin-left: 15px;
+        color: #565252;
+        font-family: 'Karla',sans-serif;
+        font-weight: 600;
+    }
+    .En{
+        font-size: 15px;
+        margin-left: 15px;
+        font-family: 'Karla',sans-serif;
+        color: #565252;
+        font-weight: 600;
+    }
+    .star{
+        color: red;
+    }
+    .popup{
+        width: 400px;
+        background: #fff;
+        border-radius: 6px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: #333;
+        visibility: hidden;
+        transition: transform 0.4s,top 0.4s;
+    }
+    .popup img{
+        width: 100px;
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .popup h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+    }
+    .popup button{
+        width: 100%;
+        margin-top: 50px;
+        padding: 10px 0;
+        background: #6fd649;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .open-popup{
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(1);
+    }
 .Manager img {
     max-width: 190%;
     object-fit: cover;
@@ -350,6 +469,7 @@ margin-top: 10%;
 }
 .Eng{
     max-width: 100px;
+    border-radius: 20px;
     background-image: url("../Assets//images/Asset\ 24.png");
     background-position: top;
     background-position-x:left;
@@ -377,8 +497,9 @@ margin-top: 10%;
     color: black;
     font-size: 40px;
     margin-top: 280px;
-    margin-left: 200px;
+    margin-left: 120px;
     margin-right: 50px;
+    text-align: left;
 }
 .matter p{
     font-weight:600!important;
@@ -391,7 +512,7 @@ margin-top: 10%;
     line-height: 1.75rem;
     font-size: 18px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 10px; 
 }
 .complete{
@@ -415,7 +536,7 @@ margin-top: 10%;
     color: #584D66;
     letter-spacing: 0;
     margin-top: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Karla',sans-serif;
     line-height: 1.75rem;
     font-size: 17px;
     margin-left: 10px; 
@@ -465,7 +586,7 @@ margin-top: 10%;
     color: #584D66;
     letter-spacing: 0;
     margin-top: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Karla',sans-serif;
     line-height: 1.75rem;
     font-size: 17px;
     margin-left: 10px;
@@ -515,7 +636,7 @@ margin-top: 10%;
     color: #584D66;
     letter-spacing: 0;
     margin-top: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Karla',sans-serif;
     line-height: 1.75rem;
     font-size: 17px;
     margin-left: 10px; 
@@ -558,8 +679,8 @@ form{
     max-height: 3000px;
     padding: 10px;
 }
-.Touch{
-    background-color: #f3f1f6; 
+.Touch h1{
+    margin-top: -20px;
 }
 form input,textarea{
     display: flex;
@@ -586,7 +707,7 @@ form button{
     margin-top: -635px;
     margin-bottom: 50px;
     object-fit: cover;
-    width: 100%;
+    width: 950%!important;
 }
 .footer{
     display: flex;
@@ -596,8 +717,10 @@ form button{
 }
 .Us{
     margin-left:80px ;
-    margin-right: 355px;
+    margin-right: 450px;
     margin-top: 30px;
+    font-family: 'Karla',sans-serif;
+
 }
 .our{
     margin-right: 290px;
@@ -607,6 +730,7 @@ form button{
     font-family: 'Rubik',sans-serif;
     word-spacing: 0.5rem;
     font-size: 30px;
+    font-weight: 500;
     color: #fff; 
     margin-bottom: 1em;
 }
@@ -614,6 +738,7 @@ form button{
     font-family: 'Rubik',sans-serif;
     word-spacing: 0.5rem;
     font-size: 25px;
+    font-weight: 500;
     color: #fff; 
     margin-top: 1em;
 }
@@ -622,7 +747,7 @@ form button{
     font-weight: lighter;
     color: #fff;
     font-size: 17px;
-    line-height: 1.5rem;
+    line-height: 2rem;
     margin-bottom: 1.75em; 
 }
 .our{
@@ -662,12 +787,14 @@ form button{
 .Architect{
     font-family: 'Rubik',sans-serif;
     word-spacing: 0.5rem;
-    font-size: 28px;
+    margin-top: 20px;
+    font-size: 30px;
 }
 .Audi{
     font-family: 'Rubik',sans-serif;
     word-spacing: 0.5rem;
-    font-size: 18px;  
+    font-size: 20px;  
+    margin-top: 20px;
 }
 .Auditor p{
     font-weight:lighter!important;
@@ -676,26 +803,34 @@ form button{
     font-family: 'Poppins', sans-serif;
 }
 .Co{
-    font-weight:lighter!important;
-    font-size: 18px;
-    color: #4e5054;
-    word-spacing: 0.3rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color:#54595f;
+    word-spacing: 0;
+    margin-bottom: 1.75em;
+    font-weight: 300;
+    font-family: 'Rubik',sans-serif;
+    text-align: center;
 }
 .Hdfc{
-    font-weight:lighter!important;
-    font-size: 18px;
-    color: #4e5054;
-    word-spacing: 0.3rem;
-    font-family: 'Poppins', sans-serif; 
+    font-size: 17px;
+    color:#54595f;
+    word-spacing: 0;
+    margin-bottom: 1.75em;
+    font-weight: 300;
+    text-align: center;
+    font-family: 'Rubik',sans-serif;
 }
 .Ar{
     display: flex;
-    box-shadow: 1px 1px 3px 2px #ddd;
+    box-shadow: 5px 5px 10px #ddd;
     background-color: #ffffff;
 }
 .Arkiton img{
     width: 25%;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-left: 30px;
 }
 .Arkiton{
     margin-left: 180px;
@@ -705,6 +840,11 @@ form button{
 }
 .Bank{
     margin-left: 10%;
+}
+.Banker{
+    margin-top: 20px;
+    font-size: 30px;
+    margin-left: 30px;
 }
 
 /* civil cards styilng from here....
@@ -733,6 +873,9 @@ form button{
     text-align: center;
     margin: 4vw 0vw;
  }
+ .col .row img{
+    width: 100%;
+ }
 
  .civil-works .civil-cards .col .row{
     display: flex;
@@ -740,20 +883,25 @@ form button{
     align-items: center;
     text-align: center;
     flex-direction: column;
-    width: 24vw !important;
+    width: 22vw !important;
     margin: 0vw 2vw;
-    box-shadow: 2px 2px 6px black;
+    box-shadow: 2px 2px 6px #6c6969;
+    border-radius: 5px;
+    background-color:#ffffff;
     border: 1px solid rgb(225, 225, 225);
     /* background-color: red; */
  }
 
  .civil-works .civil-cards .col .row p{
+    font-family: 'Karla', sans-serif;
     margin: 2vw 0vw;
-    font-size: 15px;
+    font-size: 21px;
+    font-weight: 400;
  }
  .civil-heading{
     margin-left: 8%;
     margin-bottom: -1%;
+    font-family: "Bebas Neue", sans-serif;
  }
  .civil-heading h1{
     font-weight: lighter;
@@ -767,13 +915,18 @@ form button{
     font-family: 'Abel', sans-serif;
  }
  .civil-heading p{
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 550;
+    font-family: 'Instrument Serif', serif;
+    word-spacing: 0;
+    letter-spacing: 0;
+    font-size: 12px;
     letter-spacing:1.1px;
-    font-family: 'Poppins', sans-serif;
-    color: #4258a4;
+    word-spacing: 2px;
+    color:black;
     text-align: top;
+ }
+ .row .civ{
+    font-size: 5em;
+    font-weight:normal;
  }
  /*.card .image-box{
     height: 200px;
@@ -893,12 +1046,6 @@ form button{
     height: 100%;
  }
  .project-works .Project-heading{
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    margin-right: auto;
- }
- .App{
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -1042,10 +1189,6 @@ form button{
  .completed-cards .coln .Complete-img{
     width: 50%;
  }
- .submit{
-    text-align: center;
-    align-items: center;
- }
  /* Google Fonts - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
@@ -1115,11 +1258,30 @@ body {
 .swiper-navBtn::after {
   font-size: 18px;
 }
-
+.in{
+    float: left;
+}
+.right{
+    float: right;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+.First{
+    color:#4d4d4d;
+    margin-left: 210px;
+    margin-top: -10px;
+}
+.Last{
+    color:#4d4d4d;
+    margin-left: 50px;
+    margin-top: -0px; 
+    margin-right: 230px;
+    margin-bottom: 0px;
+}
 .swiper-pagination-bullet {
   background-color: #000;
 }
-
 @media screen and (max-width: 768px) {
   .swiper-navBtn {
     display: none;
